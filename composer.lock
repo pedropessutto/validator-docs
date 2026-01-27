@@ -4,20 +4,20 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "3f87b645c978289ac8164b76d640bfe3",
+    "content-hash": "b7ca1639b46195356b1987c7832e5853",
     "packages": [
         {
             "name": "thiagocfn/inscricaoestadual",
-            "version": "1.1.2",
+            "version": "dev-master",
             "source": {
                 "type": "git",
-                "url": "https://github.com/Thiagocfn/InscricaoEstadual.git",
-                "reference": "414a43f152b9ff39b9cabd33c9bdf34a2018df1b"
+                "url": "https://github.com/pedropessutto/InscricaoEstadual.git",
+                "reference": "7c1b9ecd6c13fbb6d161eabcfb10b94c7cc82ca0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Thiagocfn/InscricaoEstadual/zipball/414a43f152b9ff39b9cabd33c9bdf34a2018df1b",
-                "reference": "414a43f152b9ff39b9cabd33c9bdf34a2018df1b",
+                "url": "https://api.github.com/repos/pedropessutto/InscricaoEstadual/zipball/7c1b9ecd6c13fbb6d161eabcfb10b94c7cc82ca0",
+                "reference": "7c1b9ecd6c13fbb6d161eabcfb10b94c7cc82ca0",
                 "shasum": ""
             },
             "require": {
@@ -27,13 +27,18 @@
                 "codacy/coverage": "dev-master",
                 "phpunit/phpunit": "^5.6"
             },
+            "default-branch": true,
             "type": "library",
             "autoload": {
                 "psr-4": {
                     "Thiagocfn\\InscricaoEstadual\\": "src/"
                 }
             },
-            "notification-url": "https://packagist.org/downloads/",
+            "autoload-dev": {
+                "psr-4": {
+                    "Thiagocfn\\InscricaoEstadual\\": "tests/"
+                }
+            },
             "license": [
                 "MIT"
             ],
@@ -46,10 +51,9 @@
             "description": "Biblioteca em PHP para validação de todas as Inscrições Estaduais de todo o Brasil, seguindo as regras da SEFAZ. http://www.sintegra.gov.br/insc_est.html",
             "homepage": "https://github.com/thiagocfn/inscricaoestadual",
             "support": {
-                "issues": "https://github.com/Thiagocfn/InscricaoEstadual/issues",
-                "source": "https://github.com/Thiagocfn/InscricaoEstadual/tree/1.1.2"
+                "source": "https://github.com/pedropessutto/InscricaoEstadual/tree/master"
             },
-            "time": "2021-03-12T00:57:51+00:00"
+            "time": "2026-01-27T16:15:23+00:00"
         }
     ],
     "packages-dev": [
@@ -8247,7 +8251,9 @@
     ],
     "aliases": [],
     "minimum-stability": "stable",
-    "stability-flags": [],
+    "stability-flags": {
+        "thiagocfn/inscricaoestadual": 20
+    },
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": {
