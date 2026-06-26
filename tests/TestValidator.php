@@ -24,22 +24,35 @@ final class TestValidator extends ValidatorTestCase
         $this->assertTrue($incorrect->fails());
     }
 
-    /** @test **/
-    public function cnpj()
+    /**
+     * @test
+     * @dataProvider cnpjDataProvider
+     **/
+    public function cnpj(string $cnpj, bool $expected): void
     {
-        $correct = Validator::make(
-            ['certo' => '53.084.587/0001-20'],
-            ['certo' => 'cnpj']
-        );
+        $valid = Validator::make(['cnpj_attribute' => $cnpj], ['cnpj_attribute' => 'cnpj'])->passes();
 
-        $incorrect = Validator::make(
-            ['errado' => '51.084.587/0001-20'],
-            ['errado' => 'cnpj']
-        );
+        $this->assertSame($expected, $valid);
+    }
 
-        $this->assertTrue($correct->passes());
-
-        $this->assertTrue($incorrect->fails());
+    public function cnpjDataProvider(): array
+    {
+        return [
+            'Alphanumeric CNPJ with dots and dashes 1'   => ['T6.JSP.XPS/0001-11', true],
+            'Alphanumeric CNPJ with dots and dashes 2'   => ['T6.JSP.XPS/J84K-69', true],
+            'Alphanumeric CNPJ with dots and dashes 3'   => ['D2.M97.AA0/0001-63', true],
+            'Alphanumeric CNPJ with dots and dashes 4'   => ['W9.7VY.JMY/0001-81', true],
+            'Alphanumeric CNPJ clean 1'                  => ['E5SGVHX9000190', true],
+            'Alphanumeric CNPJ clean 2'                  => ['E5SGVHX960LR53', true],
+            'Alphanumeric CNPJ clean 3'                  => ['12ABC34501DE35', true],
+            'Numeric CNPJ with dots and dashes 1'        => ['32.332.643/0001-29', true],
+            'Numeric CNPJ with dots and dashes 2'        => ['32.332.643/3060-40', true],
+            'Numeric CNPJ clean 1'                       => ['38725833000192', true],
+            'Numeric CNPJ clean 2'                       => ['38725833223060', true],
+            'Invalid CNPJ'                               => ['12.345.678/0001-00', false],
+            'Zeroed CNPJ'                                => ['00.000.000/0000-00', false],
+            'CNPJ with invalid characters'               => ['32.332.643/0001-9!', false],
+        ];
     }
 
     /** @test **/

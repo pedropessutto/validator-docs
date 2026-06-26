@@ -67,7 +67,7 @@ $this->validate($request, [
 ]);
 ```
 
-* **cnpj** - Verifica se um CNPJ é valido;
+* **cnpj** - Verifica se um CNPJ numérico ou alfanumérico é valido;
 
 ```php
 $this->validate($request, [

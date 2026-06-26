@@ -3,6 +3,19 @@
 A partir da versão 3.5.1 nosso modelo de logs é baseado em [mantenha um changelog](https://keepachangelog.com/pt-BR/1.0.0/) e o
 nosso versionamento é [semântico](https://semver.org/lang/pt-BR/).
 
+## [3.12.0](https://github.com/geekcom/validator-docs/compare/3.11.1...3.12.0)
+
+### Novidades
+Suporte à validação de **CNPJ Alfanumérico**, conforme especificação da Receita Federal.
+
+Referência:
+https://www.gov.br/receitafederal/pt-br/acesso-a-informacao/acoes-e-programas/programas-e-atividades/cnpj-alfanumerico
+
+### Adicionado
+- Suporte à validação de **CNPJ alfanumérico**.
+- Atualização da documentação da biblioteca.
+- Atualização do **CHANGELOG**.
+
 ## [3.11.1](https://github.com/geekcom/validator-docs/compare/3.11.0...3.11.1)
 
 ## Novidades - Por hora revertemos as melhorias na validação de CPF
